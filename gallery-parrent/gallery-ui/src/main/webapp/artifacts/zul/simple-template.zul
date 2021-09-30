@@ -1,0 +1,24 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+
+<!DOCTYPE html>
+<html xmlns="native" xmlns:zul="http://www.zkoss.org/2005/zul" xmlns:xh="xhtml" xmlns:sh="shadow">
+    <head>
+        <meta charset="utf-8"/>
+        <xh:zkhead stubonly="false"/>
+        <link rel="stylesheet" href="${c:encodeURL('/artifacts/css/global.css')}"/>        
+   </head>
+    <body>
+        <header>
+  			<div>I am header</div>
+        </header>
+        
+        <main>
+        	<xh:div self="@{insert(pageContent)}" class = "my-good"/>
+		</main>
+		
+        <footer>
+        	<div>I am footer</div>      	
+        </footer>
+    </body>
+</html>

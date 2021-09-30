@@ -1,0 +1,14 @@
+<zk xmlns="native" xmlns:xh="xhtml" xmlns:sh="shadow"
+	xmlns:zul="http://www.zkoss.org/2005/zul">
+
+	<xh:div viewModel="@id('vm') @init(arg.includer)">
+
+
+		<zul:forEach begin="1" end="@load(vm.pageCount)" step="1"
+			var="x">
+			<zul:button label="${x}"
+				onClick="@command('doPressed', button=self, index = x)" />
+		</zul:forEach>
+
+	</xh:div>
+</zk>

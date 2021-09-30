@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/artifacts/zul/simple-template.zul" ?>
+<?page complete="true"?>
+
+<html xmlns="native" xmlns:xh="xhtml" xmlns:sh="shadow"
+	xmlns:bs="http://getbootstrap.com/bs"
+	xmlns:zul="http://www.zkoss.org/2005/zul">
+
+	<xh:div>
+		<xh:div self="@{define(pageContent)}">
+			<xh:div
+				viewModel="@id('vm')@init('lt.insoft.gallery.viewmodels.IndexViewModel')"
+				validationMessages="@id('vmsgs')">
+
+				<xh:div>
+
+					<zul:vbox
+						form="@id('fx') @load(vm) @save(vm,before='doSearch') @validator(vm.formValidator)">
+
+						<zul:label value="Search criteria" />
+						<zul:textbox
+							value="@save(vm.selectedText, fx.selectedText)" />
+						<zul:combobox readonly="true"
+							value="@bind(vm.selectedCategory, fx.selectedCategory)">
+							<zul:comboitem label="imageName" />
+							<zul:comboitem label="all" />
+							<zul:comboitem label="category" />
+						</zul:combobox>
+
+						<zul:label value="@bind(vmsgs['fkey1'])" />
+						<zul:button label="Search"
+							onClick="@command('doSearch')" />
+
+					</zul:vbox>
+
+					<zul:button label="Create"
+						onClick="@command('doCreate')" />
+				</xh:div>
+
+				<xh:div>
+					<zul:forEach items="@load(vm.imageEntities)">
+						<xh:div>
+							<zul:insoft_image
+								view="${each}" />
+						</xh:div>
+					</zul:forEach>
+					<zul:insoft_paging pageSize="@load(vm.pageSize)"
+						totalItems="@load(vm.totalItems)"
+						activePage="@bind(vm.activePage)" />
+				</xh:div>
+
+
+				<!-- 		
+					<xh:div>
+					<div style="text-align: center;">
+					<zul:grid model="@load(vm.imageEntities)"
+					mold="paging" pageSize="3">
+					<zul:columns></zul:columns>
+					<zul:template name="model">
+					<zul:row align="center">
+					<zul:insoft_image
+					imageEntity="${each}" />
+					</zul:row>
+					</zul:template>
+					</zul:grid>
+					</div>
+					</xh:div>
+				-->
+			</xh:div>
+		</xh:div>
+	</xh:div>
+</html>

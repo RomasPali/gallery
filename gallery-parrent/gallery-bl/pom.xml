@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>lt.insoft.gallery</groupId>
+		<artifactId>gallery-parrent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>gallery-bl</artifactId>
+
+	<dependencies>
+		<!-- GALLERY -->
+		<dependency>
+			<groupId>lt.insoft.gallery</groupId>
+			<artifactId>gallery-model</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.imgscalr</groupId>
+			<artifactId>imgscalr-lib</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+</project>

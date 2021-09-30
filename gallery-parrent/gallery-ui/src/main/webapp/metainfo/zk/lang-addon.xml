@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language-addon>
+<language-addon>
+	<addon-name>app-addons</addon-name>
+	<language-name>xul/html</language-name>
+	<depends>zul, zkbind</depends>
+
+
+	<component>
+		<component-name>insoft_image</component-name>
+		<component-class>lt.insoft.gallery.component.InsoftImageComponent</component-class>
+		<macro-uri>/artifacts/zul/insoft_image.zul</macro-uri>
+	</component>
+
+	<component>
+		<component-name>insoft_paging</component-name>
+		<component-class>lt.insoft.gallery.component.InsoftPagingComponent</component-class>
+		<macro-uri>/artifacts/zul/insoft_paging.zul</macro-uri>
+
+		<annotation>
+			<annotation-name>ZKBIND</annotation-name>
+			<property-name>ZKBIND$activePage</property-name>
+			<attribute>
+				<attribute-name>ACCESS</attribute-name>
+				<attribute-value>save</attribute-value>
+			</attribute>
+			<attribute>
+				<attribute-name>SAVE_EVENT</attribute-name>
+				<attribute-value>onPaging</attribute-value>
+			</attribute>
+		</annotation>
+	</component>
+
+
+</language-addon>

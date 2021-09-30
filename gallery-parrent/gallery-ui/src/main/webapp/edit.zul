@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/artifacts/zul/simple-template.zul" ?>
+<?page complete="true"?>
+
+<html xmlns="native" xmlns:xh="xhtml" xmlns:sh="shadow"
+	xmlns:zul="http://www.zkoss.org/2005/zul">
+
+	<xh:div>
+		<xh:div self="@{define(pageContent)}">
+			<xh:div
+				viewModel="@id('vm')@init('lt.insoft.gallery.viewmodels.EditViewModel')">
+
+				<xh:div>
+					<zul:button label="Back"
+						onClick="@command('doBack')" />
+
+					<zul:if test="@load(vm.showSave)">
+						<zul:button label="Save"
+							onClick="@command('doSave')" />
+
+					</zul:if>
+
+					<zul:if test="@load(vm.showDelete)">
+						<zul:button label="Delete"
+							onClick="@command('doDelete')" />
+					</zul:if>
+
+
+					<zul:button label="Upload" upload="true"
+						onUpload="@command('doUploadImage', media=event.media)" />
+				</xh:div>
+				<xh:div>
+					<zul:image content="@bind(vm.uploadedImage)" />
+				</xh:div>
+				<xh:div>
+					<zul:label value="Name:" />
+					<zul:label value="@load(vm.imageName)" />
+				</xh:div>
+
+				<xh:div>
+					<zul:label value="Description:" />
+					<zul:textbox
+						value="@bind(vm.view.description)" />
+				</xh:div>
+				<xh:div>
+					<zul:label value="Category:" />
+					<zul:textbox value="@bind(vm.view.category)" />
+				</xh:div>
+
+			</xh:div>
+
+
+		</xh:div>
+	</xh:div>
+</html>

@@ -1,0 +1,11 @@
+<zk>
+    <config-name>app-config</config-name>
+    <language-config>
+        <addon-uri>/metainfo/zk/lang-addon.xml</addon-uri>
+        <language-name>xul/html</language-name>
+    </language-config>
+    
+  <listener>
+    <listener-class>lt.insoft.gallery.config.WebAppInitListener</listener-class>
+  </listener>
+</zk>

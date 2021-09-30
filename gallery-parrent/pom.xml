@@ -1,0 +1,137 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.4</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>lt.insoft.gallery</groupId>
+	<artifactId>gallery-parrent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>11</java.version>
+		<zk.version>9.6.0-Eval</zk.version>
+		<gallery.bl.version>0.0.1-SNAPSHOT</gallery.bl.version>
+		<gallery.model.version>0.0.1-SNAPSHOT</gallery.model.version>
+		<imgscalr.lib.version>4.2</imgscalr.lib.version>
+		<org.tuckey.version>4.0.3</org.tuckey.version>
+		<org.lombok.version>1.18.12</org.lombok.version>
+	</properties>
+
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE, Version 3</name>
+			<url>https://www.gnu.org/licenses/lgpl.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<repositories>
+		<repository>
+			<id>ZK CE</id>
+			<name>ZK CE Repository</name>
+			<url>https://mavensync.zkoss.org/maven2</url>
+		</repository>
+		<repository>
+			<id>ZK EVAL</id>
+			<name>ZK Evaluation Repository</name>
+			<url>https://mavensync.zkoss.org/eval</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>zkmaven</id>
+			<name>ZK Maven Plugin Repository</name>
+			<url>https://mavensync.zkoss.org/maven2/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+
+	<modules>
+		<module>gallery-bl</module>
+		<module>gallery-model</module>
+		<module>gallery-ui</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${org.lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- GALLERY -->
+			<dependency>
+				<groupId>lt.insoft.gallery</groupId>
+				<artifactId>gallery-bl</artifactId>
+				<version>${gallery.bl.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>lt.insoft.gallery</groupId>
+				<artifactId>gallery-model</artifactId>
+				<version>${gallery.model.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.imgscalr/imgscalr-lib -->
+			<dependency>
+				<groupId>org.imgscalr</groupId>
+				<artifactId>imgscalr-lib</artifactId>
+				<version>${imgscalr.lib.version}</version>
+			</dependency>
+			<!-- URL REWRITER https://tuckey.org/urlrewrite/ -->
+			<dependency>
+				<groupId>org.tuckey</groupId>
+				<artifactId>urlrewritefilter</artifactId>
+				<version>${org.tuckey.version}</version>
+			</dependency>
+
+			<!-- ZK -->
+			<dependency>
+				<groupId>org.zkoss.zk</groupId>
+				<artifactId>zul</artifactId>
+				<version>${zk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zkoss.zk</groupId>
+				<artifactId>zhtml</artifactId>
+				<version>${zk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zkoss.zk</groupId>
+				<artifactId>zkbind</artifactId>
+				<version>${zk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zkoss.zk</groupId>
+				<artifactId>zkplus</artifactId>
+				<version>${zk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zkoss.zk</groupId>
+				<artifactId>zuti</artifactId>
+				<version>${zk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zkoss.zk</groupId>
+				<artifactId>zkex</artifactId>
+				<version>${zk.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>

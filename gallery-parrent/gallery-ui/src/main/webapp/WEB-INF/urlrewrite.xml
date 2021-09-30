@@ -1,0 +1,13 @@
+<!-- Configuration file for UrlRewriteFilter http://www.tuckey.org/urlrewrite/ -->
+<urlrewrite>
+	
+	<rule>
+		<from>/create</from>
+		<to type="redirect">edit.zul?id=-1</to>
+	</rule>
+
+	<rule>
+		<from>/edit/([0-9]+)</from>
+		<to type="redirect">/gallery/edit.zul?id=$1</to>
+	</rule>
+</urlrewrite>
